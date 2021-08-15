@@ -30,7 +30,7 @@ public class BirdTest {
         bird.sing();
         Assert.assertEquals("", outputStreamCaptor.toString().trim());
         bird.fly();
-        Assert.assertEquals("", outputStreamCaptor.toString().trim());
+        Assert.assertEquals(Constants.FLYING, outputStreamCaptor.toString().trim());
     }
 
     @Test

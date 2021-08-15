@@ -1,7 +1,5 @@
 package com.example;
 
-import static org.junit.Assert.assertTrue;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
@@ -78,6 +76,15 @@ public class FishTest {
         Dolphin dolphin = new Dolphin();
         dolphin.swim();
         Assert.assertEquals(Constants.SWIMMING, outputStreamCaptor.toString().trim());
+        outputStreamCaptor.reset();
+        dolphin.walk();
+        Assert.assertEquals("", outputStreamCaptor.toString().trim());
+        outputStreamCaptor.reset();
+        dolphin.fly();
+        Assert.assertEquals("", outputStreamCaptor.toString().trim());
+        outputStreamCaptor.reset();
+        dolphin.sing();
+        Assert.assertEquals("", outputStreamCaptor.toString().trim());
         outputStreamCaptor.reset();
     }
 
