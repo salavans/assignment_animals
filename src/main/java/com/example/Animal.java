@@ -73,10 +73,10 @@ class NoSwim implements Swimmable {
 }
 
 abstract class Animal {
-    Flyable flyBehavior;
-    Singable singBehavior;
-    Walkable walkBehavior;
-    Swimmable swimBehavior;
+    private Flyable flyBehavior;
+    private Singable singBehavior;
+    private Walkable walkBehavior;
+    private Swimmable swimBehavior;
     protected String sound;
 
     Animal(String sound) {
@@ -91,20 +91,36 @@ abstract class Animal {
         this("");
     }
 
-    protected void setFlyBehaviour(Flyable flyBehavior) {
+    protected final void setFlyBehaviour(Flyable flyBehavior) {
         this.flyBehavior = flyBehavior;
     }
 
-    protected void setSingBehaviour(Singable singBehavior) {
+    protected final void setSingBehaviour(Singable singBehavior) {
         this.singBehavior = singBehavior;
     }
 
-    protected void setWalkBehaviour(Walkable walkBehavior) {
+    protected final void setWalkBehaviour(Walkable walkBehavior) {
         this.walkBehavior = walkBehavior;
     }
 
-    protected void setSwimBehaviour(Swimmable swimBehavior) {
+    protected final void setSwimBehaviour(Swimmable swimBehavior) {
         this.swimBehavior = swimBehavior;
+    }
+
+    public Flyable getFlyBehaviour() {
+        return flyBehavior;
+    }
+
+    public Singable getSingBehaviour() {
+        return singBehavior;
+    }
+
+    public Walkable getWalkBehaviour() {
+        return walkBehavior;
+    }
+
+    public Swimmable getSwimBehaviour() {
+        return swimBehavior;
     }
 
     void fly() {

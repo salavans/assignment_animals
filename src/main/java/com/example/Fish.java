@@ -64,9 +64,8 @@ class Shark extends Fish {
 }
 
 class Dolphin extends Animal {
-    final Fish fish = new Fish();
 
-    public void swim() {
-        fish.swim();
+    Dolphin() {
+        setSwimBehaviour(new CanSwim());
     }
 }
