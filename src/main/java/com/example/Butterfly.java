@@ -3,9 +3,9 @@ package com.example;
 class Butterfly extends Animal {
     Butterfly(boolean isCaterpillar) {
         if (isCaterpillar) {
-            setWalkBehaviour(new CanWalk());
+            setWalkBehaviour(new Walker());
         } else {
-            setFlyBehaviour(new CanFly());
+            setFlyBehaviour(new Flyer());
         }
     }
 }

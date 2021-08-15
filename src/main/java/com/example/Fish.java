@@ -17,7 +17,7 @@ class Fish extends Animal {
     Fish() {
         size = FishSize.UNDEFINED;
         color = FishColor.UNDEFINED;
-        setSwimBehaviour(new CanSwim());
+        setSwimBehaviour(new Swimmer());
     }
 
     public FishSize getSize() {
@@ -66,6 +66,6 @@ class Shark extends Fish {
 class Dolphin extends Animal {
 
     Dolphin() {
-        setSwimBehaviour(new CanSwim());
+        setSwimBehaviour(new Swimmer());
     }
 }

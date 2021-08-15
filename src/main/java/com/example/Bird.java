@@ -3,16 +3,16 @@ package com.example;
 class Bird extends Animal {
     public Bird(String sound) {
         this.sound = sound;
-        setFlyBehaviour(new CanFly());
-        setSingBehaviour(new CanSing());
-        setWalkBehaviour(new CanWalk());
+        setFlyBehaviour(new Flyer());
+        setSingBehaviour(new Singer());
+        setWalkBehaviour(new Walker());
     }
 }
 
 class Duck extends Bird {
     public Duck() {
         super(Sounds.DUCK);
-        setSwimBehaviour(new CanSwim());
+        setSwimBehaviour(new Swimmer());
     }
 }
 
@@ -25,16 +25,15 @@ class Chicken extends Bird {
 
     protected Chicken(String sound) {
         super(sound);
-        setFlyBehaviour(new NoFly());
+        setFlyBehaviour(new FlyNoWay());
     }
 }
 
 // Rooster is a Male Chicken
 class Rooster extends Chicken {
     public Rooster() {
-        // super(Sounds.ROOSETER);
+        super(Sounds.ROOSETER);
         isMale = true;
-        setSingBehaviour((s) -> System.out.println(Sounds.ROOSETER));
     }
 }
 
